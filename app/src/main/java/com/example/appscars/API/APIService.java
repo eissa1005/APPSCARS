@@ -1,13 +1,9 @@
 package com.example.appscars.API;
 
-
-import com.example.appscars.Model.Response.CAR;
 import com.example.appscars.Model.Response.CARModel;
-import com.example.appscars.Model.Response.CarBrand;
 import com.example.appscars.Model.Response.CarBrandModel;
 import com.example.appscars.Model.Response.CarTypeModel;
 import com.example.appscars.Model.Response.MainModel;
-
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

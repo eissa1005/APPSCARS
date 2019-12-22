@@ -4,225 +4,225 @@ import com.google.gson.annotations.SerializedName;
 public class CAR {
 
 	@SerializedName("Car_No")
-	private String cARNo;
+	private String Car_No;
 
 	@SerializedName("Car_Status")
-	private String cARStatus;
+	private String Car_Status;
 
 	@SerializedName("Pay_Type")
-	private String payType;
+	private String Pay_Type;
 
 	@SerializedName("City")
-	private String city;
+	private String City;
 
 	@SerializedName("Car_Photo")
-	private String cARPhoto;
+	private String Car_Photo;
 
 	@SerializedName("Check_Photo")
-	private String checkPhoto;
+	private String Check_Photo;
 
 	@SerializedName("CarID")
-	private int carID;
+	private int CarID;
 
 	@SerializedName("Colors")
-	private String colors;
+	private String Colors;
 
 	@SerializedName("Car_Price")
-	private int cARPrice;
+	private int Car_Price;
 
 	@SerializedName("Check_Date")
-	private String checkDate;
+	private String Check_Date;
 
 	@SerializedName("Car_Brand")
-	private String cARBrand;
+	private String Car_Brand;
 
 	@SerializedName("Car_Type")
-	private String cARType;
+	private String Car_Type;
 
 	@SerializedName("Category_Type")
-	private String categoryType;
+	private String Category_Type;
 
 	@SerializedName("Car_Size")
-	private String carSize;
+	private String Car_Size;
 
 	@SerializedName("Check_Status")
-	private String checkStatus;
+	private String Check_Status;
 
 	@SerializedName("Notes")
-	private String notes;
+	private String Notes;
 
 	@SerializedName("Car_Model")
-	private String cARModel;
+	private String Car_Model;
 
 	@SerializedName("Location")
-	private String location;
+	private String Location;
 
-	public void setCARNo(String cARNo){
-		this.cARNo = cARNo;
-	}
+  public String getCar_No() {
+    return Car_No;
+  }
 
-	public String getCARNo(){
-		return cARNo;
-	}
+  public void setCar_No(String car_No) {
+    Car_No = car_No;
+  }
 
-	public void setCARStatus(String cARStatus){
-		this.cARStatus = cARStatus;
-	}
+  public String getCar_Status() {
+    return Car_Status;
+  }
 
-	public String getCARStatus(){
-		return cARStatus;
-	}
+  public void setCar_Status(String car_Status) {
+    Car_Status = car_Status;
+  }
 
-	public void setPayType(String payType){
-		this.payType = payType;
-	}
+  public String getPay_Type() {
+    return Pay_Type;
+  }
 
-	public String getPayType(){
-		return payType;
-	}
+  public void setPay_Type(String pay_Type) {
+    Pay_Type = pay_Type;
+  }
 
-	public void setCity(String city){
-		this.city = city;
-	}
+  public String getCity() {
+    return City;
+  }
 
-	public String getCity(){
-		return city;
-	}
+  public void setCity(String city) {
+    City = city;
+  }
 
-	public void setCARPhoto(String cARPhoto){
-		this.cARPhoto = cARPhoto;
-	}
+  public String getCar_Photo() {
+    return Car_Photo;
+  }
 
-	public String getCARPhoto(){
-		return cARPhoto;
-	}
+  public void setCar_Photo(String car_Photo) {
+    Car_Photo = car_Photo;
+  }
 
-	public void setCheckPhoto(String checkPhoto){
-		this.checkPhoto = checkPhoto;
-	}
+  public String getCheck_Photo() {
+    return Check_Photo;
+  }
 
-	public String getCheckPhoto(){
-		return checkPhoto;
-	}
+  public void setCheck_Photo(String check_Photo) {
+    Check_Photo = check_Photo;
+  }
 
-	public void setCarID(int carID){
-		this.carID = carID;
-	}
+  public int getCarID() {
+    return CarID;
+  }
 
-	public int getCarID(){
-		return carID;
-	}
+  public void setCarID(int carID) {
+    CarID = carID;
+  }
 
-	public void setColors(String colors){
-		this.colors = colors;
-	}
+  public String getColors() {
+    return Colors;
+  }
 
-	public String getColors(){
-		return colors;
-	}
+  public void setColors(String colors) {
+    Colors = colors;
+  }
 
-	public void setCARPrice(int cARPrice){
-		this.cARPrice = cARPrice;
-	}
+  public int getCar_Price() {
+    return Car_Price;
+  }
 
-	public int getCARPrice(){
-		return cARPrice;
-	}
+  public void setCar_Price(int car_Price) {
+    Car_Price = car_Price;
+  }
 
-	public void setCheckDate(String checkDate){
-		this.checkDate = checkDate;
-	}
+  public String getCheck_Date() {
+    return Check_Date;
+  }
 
-	public String getCheckDate(){
-		return checkDate;
-	}
+  public void setCheck_Date(String check_Date) {
+    Check_Date = check_Date;
+  }
 
-	public void setCARBrand(String cARBrand){
-		this.cARBrand = cARBrand;
-	}
+  public String getCar_Brand() {
+    return Car_Brand;
+  }
 
-	public String getCARBrand(){
-		return cARBrand;
-	}
+  public void setCar_Brand(String car_Brand) {
+    Car_Brand = car_Brand;
+  }
 
-	public void setCARType(String cARType){
-		this.cARType = cARType;
-	}
+  public String getCar_Type() {
+    return Car_Type;
+  }
 
-	public String getCARType(){
-		return cARType;
-	}
+  public void setCar_Type(String car_Type) {
+    Car_Type = car_Type;
+  }
 
-	public void setCategoryType(String categoryType){
-		this.categoryType = categoryType;
-	}
+  public String getCategory_Type() {
+    return Category_Type;
+  }
 
-	public String getCategoryType(){
-		return categoryType;
-	}
+  public void setCategory_Type(String category_Type) {
+    Category_Type = category_Type;
+  }
 
-	public void setCarSize(String carSize){
-		this.carSize = carSize;
-	}
+  public String getCar_Size() {
+    return Car_Size;
+  }
 
-	public String getCarSize(){
-		return carSize;
-	}
+  public void setCar_Size(String car_Size) {
+    Car_Size = car_Size;
+  }
 
-	public void setCheckStatus(String checkStatus){
-		this.checkStatus = checkStatus;
-	}
+  public String getCheck_Status() {
+    return Check_Status;
+  }
 
-	public String getCheckStatus(){
-		return checkStatus;
-	}
+  public void setCheck_Status(String check_Status) {
+    Check_Status = check_Status;
+  }
 
-	public void setNotes(String notes){
-		this.notes = notes;
-	}
+  public String getNotes() {
+    return Notes;
+  }
 
-	public String getNotes(){
-		return notes;
-	}
+  public void setNotes(String notes) {
+    Notes = notes;
+  }
 
-	public void setCARCAR_NoModel(String cARModel){
-		this.cARModel = cARModel;
-	}
+  public String getCar_Model() {
+    return Car_Model;
+  }
 
-	public String getCARModel(){
-		return cARModel;
-	}
+  public void setCar_Model(String car_Model) {
+    Car_Model = car_Model;
+  }
 
-	public void setLocation(String location){
-		this.location = location;
-	}
+  public String getLocation() {
+    return Location;
+  }
 
-	public String getLocation(){
-		return location;
-	}
+  public void setLocation(String location) {
+    Location = location;
+  }
 
-	@Override
+  @Override
  	public String toString(){
-		return 
+		return
 			"CAR{" +
-			"cAR_No = '" + cARNo + '\'' + 
-			",cAR_Status = '" + cARStatus + '\'' + 
-			",pay_Type = '" + payType + '\'' + 
-			",city = '" + city + '\'' + 
-			",cAR_Photo = '" + cARPhoto + '\'' + 
-			",check_Photo = '" + checkPhoto + '\'' + 
-			",carID = '" + carID + '\'' + 
-			",colors = '" + colors + '\'' + 
-			",cAR_Price = '" + cARPrice + '\'' + 
-			",check_Date = '" + checkDate + '\'' + 
-			",cAR_Brand = '" + cARBrand + '\'' + 
-			",cAR_Type = '" + cARType + '\'' + 
-			",category_Type = '" + categoryType + '\'' + 
-			",car_Size = '" + carSize + '\'' + 
-			",check_Status = '" + checkStatus + '\'' + 
-			",notes = '" + notes + '\'' + 
-			",cAR_Model = '" + cARModel + '\'' + 
-			",location = '" + location + '\'' + 
+			"Car_No = '" + Car_No + '\'' +
+			",Car_No_Status = '" + Car_Status + '\'' +
+			",Pay_Type = '" + Pay_Type + '\'' +
+			",City = '" + City + '\'' +
+			",Car_Photo = '" + Car_Photo + '\'' +
+			",Check_Photo = '" + Check_Photo + '\'' +
+			",CarID = '" + CarID + '\'' +
+			",Colors = '" + Colors + '\'' +
+			",Car_Price = '" + Car_Price + '\'' +
+			",Check_Date = '" + Check_Date + '\'' +
+			",Car_Brand = '" + Car_Brand + '\'' +
+			",Car_Type = '" + Car_Type + '\'' +
+			",Category_Type = '" + Category_Type + '\'' +
+			",Car_Size = '" + Car_Size + '\'' +
+			",Check_Status = '" + Check_Status + '\'' +
+			",Notes = '" + Notes + '\'' +
+			",Car_Model = '" + Car_Model + '\'' +
+			",location = '" + Location + '\'' +
 			"}";
 		}
 }

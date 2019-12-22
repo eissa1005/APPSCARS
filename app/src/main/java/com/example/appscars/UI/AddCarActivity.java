@@ -66,10 +66,8 @@ public class AddCarActivity extends BaseActivity {
     TextInputEditText car_Price;
     @BindView(R.id.check_Date)
     TextInputEditText check_Date;
-    @BindView(R.id.btn_Addadvertisement)
-    Button btn_Addadvertisement;
-    @BindView(R.id.toolbar_advertiseemnt)
-    Toolbar toolbar;
+    @BindView(R.id.btn_AddCar)
+    Button btn_AddCar;
 
     CompositeDisposable compositeDisposable;
     LayoutAnimationController layoutAnimationController;
@@ -80,7 +78,6 @@ public class AddCarActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         compositeDisposable.clear();
-
         super.onDestroy();
     }
 
@@ -91,6 +88,7 @@ public class AddCarActivity extends BaseActivity {
         Log.d(TAG, "onCreate:Called");
         init();
         initView();
+        loadCarBrand();
         loadCarType();
 
     }
@@ -119,18 +117,40 @@ public class AddCarActivity extends BaseActivity {
     }
 
 
+    // Load Data From Server
+    public void loadCarBrand() {
+        mDialog.show();
+        compositeDisposable.add(APIManage.getApi().GetCarBrand(Common.API_KEY)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(carBrandModel -> {
+                    if (carBrandModel.isSuccess()) {
+                        Log.d(TAG, "carBrandModel:Size " + String.valueOf(carBrandModel.getResult().size()));
+                        Log.d(TAG, "carBrandModel:Name " + String.valueOf(carBrandModel.getResult().get(0).getCarBrand()));
+                        EventBus.getDefault().post(new CarBrandEvent(true, carBrandModel.getResult()));
+                        mDialog.dismiss();
+                    } else {
+                        Toast.makeText(activity, "Get Car Brand" + carBrandModel.getMessage(), Toast.LENGTH_SHORT).show();
+                        mDialog.dismiss();
+                    }
+                }, throwable -> {
+                    Toast.makeText(activity, " Throwable Car Brand" + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                    mDialog.dismiss();
+                }));
+    }
 
-    // displayCarBrand
-    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
-    public void displayCarBrand(CarBrandEvent event) {
-        Log.d(TAG, "displayCarBrand: called!!");
-        Log.d(TAG, "displayCarBrand:Size  " + event.getBrandList().size());
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void displayAddon(CarBrandEvent event) {
+        Log.d(TAG, "displayAddon: called!!");
+        Log.d(TAG, "displayAddon: "+event.getBrandList().get(0).toString());
         if (event.isSuccess()) {
             recycler_carBrand.setHasFixedSize(true);
             recycler_carBrand.setLayoutManager(new LinearLayoutManager(this));
             recycler_carBrand.setAdapter(new CarBrandAdapter(AddCarActivity.this, event.getBrandList()));
         }
     }
+
+
 
     public void displayCarType(List<CarType> carTypeList) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
@@ -176,7 +196,7 @@ public class AddCarActivity extends BaseActivity {
         list_category.setAdapter(adapter);
     }
 
-    @OnClick(R.id.btn_Addadvertisement)
+    @OnClick(R.id.btn_AddCar)
     public void AddAdvertisement() {
         Toast.makeText(activity, "Added Advertisement Car is Success", Toast.LENGTH_SHORT).show();
 

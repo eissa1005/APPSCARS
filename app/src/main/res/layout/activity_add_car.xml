@@ -7,19 +7,7 @@
     android:orientation="vertical"
     tools:context=".UI.CarListActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_advertiseemnt"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/button_color"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="@android:color/white" />
-    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -668,7 +656,7 @@
                 tools:ignore="UnusedAttribute,UselessLeaf">
 
                 <Button
-                    android:id="@+id/btn_Addadvertisement"
+                    android:id="@+id/btn_AddCar"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
