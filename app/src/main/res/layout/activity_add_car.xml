@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.CarListActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_advertiseemnt"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/button_color"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="@android:color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="ScrollViewSize">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/magnifika"
+                android:text="Add Advertisement"
+                android:textColor="@color/button_color"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <!-- TableRow Car Brand -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+
+                    <com.github.florent37.expansionpanel.ExpansionHeader
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:expansion_headerIndicator="@id/headerIndicator"
+                        app:expansion_layout="@id/expansionLayout"
+                        app:expansion_toggleOnClick="true">
+
+                        <!-- HEADER -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/magnifika"
+                            android:text="Car Brand "
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText" />
+                        <!-- HEADER INDICATOR -->
+                        <ImageView
+                            android:id="@+id/headerIndicator"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+                    </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                    <com.github.florent37.expansionpanel.ExpansionLayout
+                        android:id="@+id/expansionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_carBrand"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp" />
+                    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TableRow Car Type -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+
+                    <com.github.florent37.expansionpanel.ExpansionHeader
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:expansion_headerIndicator="@id/headerIndicatorCarType"
+                        app:expansion_layout="@id/expansionLayoutCarType"
+                        app:expansion_toggleOnClick="true">
+
+                        <!-- HEADER -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/magnifika"
+                            android:text="@string/car_type"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText" />
+                        <!-- HEADER INDICATOR -->
+                        <ImageView
+                            android:id="@+id/headerIndicatorCarType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+                    </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                    <com.github.florent37.expansionpanel.ExpansionLayout
+                        android:id="@+id/expansionLayoutCarType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_carType"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp" />
+                    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TableRow Car Status -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+
+                    <com.github.florent37.expansionpanel.ExpansionHeader
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:expansion_headerIndicator="@id/expansionLayoutcar_Statuse"
+                        app:expansion_layout="@id/expansionLayoutcar_Statuse"
+                        app:expansion_toggleOnClick="true">
+
+                        <!-- HEADER -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/magnifika"
+                            android:text="Car Status "
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText" />
+                        <!-- HEADER INDICATOR -->
+                        <ImageView
+                            android:id="@+id/expansionLayoutcar_Statuse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+                    </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                    <com.github.florent37.expansionpanel.ExpansionLayout
+                        android:id="@+id/expansionLayoutcarStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ListView
+                            android:id="@+id/listView_carStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            tools:ignore="NestedScrolling" />
+                    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TableRow Category -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+
+                    <com.github.florent37.expansionpanel.ExpansionHeader
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:expansion_headerIndicator="@id/headerIndicator"
+                        app:expansion_layout="@id/expansionLayout"
+                        app:expansion_toggleOnClick="true">
+
+                        <!-- HEADER -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/magnifika"
+                            android:text="Car Brand "
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText" />
+                        <!-- HEADER INDICATOR -->
+                        <ImageView
+                            android:id="@+id/headerIndicatorCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+                    </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                    <com.github.florent37.expansionpanel.ExpansionLayout
+                        android:id="@+id/expansionLayoutCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ListView
+                            android:id="@+id/list_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            tools:ignore="NestedScrolling" />
+                    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TableRow Car Model -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/magnifika"
+                        android:text="@string/car_model"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        android:textStyle="normal"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/car_Model"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:hint="@string/car_model_hint"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TableRow Check Status -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/magnifika"
+                        android:text="@string/car_status"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        android:textStyle="normal"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/check_staus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:hint="@string/car_status_hint"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TableRow Check Photo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/magnifika"
+                        android:text="@string/car_photo"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        android:textStyle="normal"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn_check_Photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border_button"
+                            android:fontFamily="@font/magnifika"
+                            android:text="@string/check_photo"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            tools:ignore="UnusedAttribute" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TableRow City -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/magnifika"
+                        android:text="@string/car_city"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        android:textStyle="normal"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/car_city"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/car_city"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TableRow Pay Type -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+
+                    <com.github.florent37.expansionpanel.ExpansionHeader
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:expansion_headerIndicator="@id/headerIndicator"
+                        app:expansion_layout="@id/expansionLayout"
+                        app:expansion_toggleOnClick="true">
+
+                        <!-- HEADER -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/magnifika"
+                            android:text="@string/pay_type"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText" />
+                        <!-- HEADER INDICATOR -->
+                        <ImageView
+                            android:id="@+id/headerIndicatorpayType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+                    </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                    <com.github.florent37.expansionpanel.ExpansionLayout
+                        android:id="@+id/expansionLayoutpayType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_payType"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp" />
+                    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+                </LinearLayout>
+
+                <!-- TableRow Price -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="10"
+                    tools:ignore="UselessLeaf">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/magnifika"
+                            android:text="@string/car_price"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/car_Price"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/car_price"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="18sp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TableRow Check Date -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="10"
+                    tools:ignore="UselessLeaf">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/magnifika"
+                            android:text="@string/check_date"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/check_Date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/check_date"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="25sp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!---  button   -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UnusedAttribute,UselessLeaf">
+
+                <Button
+                    android:id="@+id/btn_Addadvertisement"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/border_button"
+                    android:fontFamily="@font/magnifika"
+                    android:text="@string/add_advertisement"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#070A37</color>
+    <color name="colorPrimaryDark">#030622</color>
+    <color name="colorAccent">#070A37</color>
+    <color name="button_color">#040733</color>
+    <color name="divider">#F7F5F4</color>
+    <color name="colorPrice">#070A37</color>
+    <color name="bt_border_color">#b3b3ff</color>
+    <color name="black">#0F0F0F</color>
+    <color name="colorWhite">#F3F0EE</color>
+    <color name="buttonColor">@color/colorPrimary</color>
+    <color name="overlayBackground">#F0EDED</color>
+    <color name="overBackground">#F5F2F2</color>
+    <color name="colorPrimaryBlue">#40abfe</color>
+    <color name="colorCardviewDark">#52424242</color>
+    <color name="black_layer">#7b000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorOrange">#F36819</color>
+    <color name="colorRecycler">#F5E5CA</color>
+    <color name="gray_cell_background">#B5D7DB</color>
+    <color name="view_color">#B0BEC5</color>
+    <color name="dark_gray">#070A37</color>
+    <color name="colorGreen">#FF4CAF50</color>
+</resources>
