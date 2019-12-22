@@ -80,7 +80,7 @@ public class AddCarActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         compositeDisposable.clear();
-        
+
         super.onDestroy();
     }
 

@@ -3,7 +3,6 @@ package com.example.appscars.UI;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.example.appscars.API.APIManage;
 import com.example.appscars.Adapter.MainCarAdapter;
 import com.example.appscars.Adapter.MainCarSliderAdapter;
@@ -14,19 +13,14 @@ import com.example.appscars.Model.Response.MainCar;
 import com.example.appscars.R;
 import com.example.appscars.Service.PicassoImageLoadingService;
 import com.example.appscars.Utility.SpaceItemDecoration;
-import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
 import com.google.android.material.navigation.NavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,13 +28,10 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dmax.dialog.SpotsDialog;
@@ -66,7 +57,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         compositeDisposable.clear();
         super.onDestroy();
     }
-
 
 
     @Override
@@ -136,6 +126,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         recycler_main.setLayoutAnimation(layoutAnimationController);
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -224,7 +215,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.nav_account:
                 break;
             case R.id.nav_Advertisement:
-                startActivity(new Intent(MainActivity.this,AdvertisementActivity.class));
+                startActivity(new Intent(MainActivity.this, AddCarActivity.class));
                 break;
             case R.id.nav_message:
                 break;
