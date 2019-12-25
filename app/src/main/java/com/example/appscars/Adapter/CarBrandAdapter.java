@@ -1,8 +1,6 @@
 package com.example.appscars.Adapter;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.appscars.Model.Response.CarBrand;
 import com.example.appscars.R;
 import com.github.florent37.expansionpanel.ExpansionLayout;
+import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
+
 import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,15 +23,11 @@ public class CarBrandAdapter extends RecyclerView.Adapter<CarBrandAdapter.CarBra
 
     Context mContext;
     List<CarBrand> carBrandList;
-    private SparseBooleanArray expandStates = new SparseBooleanArray();
+
 
     public CarBrandAdapter(Context mContext, List<CarBrand> carBrandList) {
         this.mContext = mContext;
         this.carBrandList = carBrandList;
-
-        for (int i = 0; i < carBrandList.size(); i++) {
-            expandStates.append(i, false);
-        }
     }
 
     @NonNull
@@ -43,11 +39,7 @@ public class CarBrandAdapter extends RecyclerView.Adapter<CarBrandAdapter.CarBra
 
     @Override
     public void onBindViewHolder(@NonNull CarBrandHolder holder, int position) {
-        final CarBrand carBrand = carBrandList.get(position);
-        holder.setIsRecyclable(false);
         holder.txt_carBrand.setText(new StringBuilder(carBrandList.get(position).getCarBrand()));
-        holder.itemView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorRecycler));
-        holder.expansionLayout.setBackgroundColor(ContextCompat.getColor(mContext,R.color.bt_blue_pressed));
 
     }
 
@@ -57,23 +49,24 @@ public class CarBrandAdapter extends RecyclerView.Adapter<CarBrandAdapter.CarBra
         else
             return carBrandList.size();
     }
-
-    private void onClickButton(final ExpansionLayout expansionLayout) {
-        expansionLayout.toggle(true);
+    public void setItems(List<CarBrand> items) {
+        this.carBrandList.addAll(items);
+        notifyDataSetChanged();
     }
 
     public class CarBrandHolder extends RecyclerView.ViewHolder  {
         @BindView(R.id.txt_carBrand)
         TextView txt_carBrand;
-        @BindView(R.id.expansionLayout)
-        ExpansionLayout expansionLayout;
+
+
 
         Unbinder unbinder;
-
         public CarBrandHolder(@NonNull View itemView) {
             super(itemView);
             unbinder = ButterKnife.bind(this, itemView);
         }
+
+
 
     }
 }

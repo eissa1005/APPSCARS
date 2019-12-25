@@ -7,23 +7,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
-
 import com.example.appscars.API.APIManage;
 import com.example.appscars.Adapter.CarListAdapter;
 import com.example.appscars.Base.BaseActivity;
 import com.example.appscars.Common.Common;
 import com.example.appscars.Model.Response.CAR;
 import com.example.appscars.R;
+
 import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import dmax.dialog.SpotsDialog;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
+
 
 public class CarListActivity extends BaseActivity {
 
@@ -106,4 +109,6 @@ public class CarListActivity extends BaseActivity {
         mDialog=new SpotsDialog.Builder().setContext(activity).setCancelable(false).build();
 
     }
+
+
 }

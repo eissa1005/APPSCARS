@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_pay_type"
+    android:layout_width="match_parent"
+    android:layout_margin="4dp"
+    android:textAlignment="center"
+    android:orientation="vertical"
+    android:layout_height="50dp">
+</ListView>

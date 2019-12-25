@@ -57,27 +57,27 @@ public class CAR {
 	@SerializedName("Location")
 	private String Location;
 
-  public String getCar_No() {
+  public String getCarNo() {
     return Car_No;
   }
 
-  public void setCar_No(String car_No) {
+  public void setCarNo(String car_No) {
     Car_No = car_No;
   }
 
-  public String getCar_Status() {
+  public String getCarStatus() {
     return Car_Status;
   }
 
-  public void setCar_Status(String car_Status) {
+  public void setCarStatus(String car_Status) {
     Car_Status = car_Status;
   }
 
-  public String getPay_Type() {
+  public String getPayType() {
     return Pay_Type;
   }
 
-  public void setPay_Type(String pay_Type) {
+  public void setPayType(String pay_Type) {
     Pay_Type = pay_Type;
   }
 
@@ -89,19 +89,19 @@ public class CAR {
     City = city;
   }
 
-  public String getCar_Photo() {
+  public String getCarPhoto() {
     return Car_Photo;
   }
 
-  public void setCar_Photo(String car_Photo) {
+  public void setCarPhoto(String car_Photo) {
     Car_Photo = car_Photo;
   }
 
-  public String getCheck_Photo() {
+  public String getCheckPhoto() {
     return Check_Photo;
   }
 
-  public void setCheck_Photo(String check_Photo) {
+  public void setCheckPhoto(String check_Photo) {
     Check_Photo = check_Photo;
   }
 
@@ -121,59 +121,59 @@ public class CAR {
     Colors = colors;
   }
 
-  public int getCar_Price() {
+  public int getCarPrice() {
     return Car_Price;
   }
 
-  public void setCar_Price(int car_Price) {
+  public void setCarPrice(int car_Price) {
     Car_Price = car_Price;
   }
 
-  public String getCheck_Date() {
+  public String getCheckDate() {
     return Check_Date;
   }
 
-  public void setCheck_Date(String check_Date) {
+  public void setCheckDate(String check_Date) {
     Check_Date = check_Date;
   }
 
-  public String getCar_Brand() {
+  public String getCarBrand() {
     return Car_Brand;
   }
 
-  public void setCar_Brand(String car_Brand) {
+  public void setCarBrand(String car_Brand) {
     Car_Brand = car_Brand;
   }
 
-  public String getCar_Type() {
+  public String getCarType() {
     return Car_Type;
   }
 
-  public void setCar_Type(String car_Type) {
+  public void setCarType(String car_Type) {
     Car_Type = car_Type;
   }
 
-  public String getCategory_Type() {
+  public String getCategoryType() {
     return Category_Type;
   }
 
-  public void setCategory_Type(String category_Type) {
+  public void setCategoryType(String category_Type) {
     Category_Type = category_Type;
   }
 
-  public String getCar_Size() {
+  public String getCarSize() {
     return Car_Size;
   }
 
-  public void setCar_Size(String car_Size) {
+  public void setCarSize(String car_Size) {
     Car_Size = car_Size;
   }
 
-  public String getCheck_Status() {
+  public String getCheckStatus() {
     return Check_Status;
   }
 
-  public void setCheck_Status(String check_Status) {
+  public void setCheckStatus(String check_Status) {
     Check_Status = check_Status;
   }
 
@@ -185,11 +185,11 @@ public class CAR {
     Notes = notes;
   }
 
-  public String getCar_Model() {
+  public String getCarModel() {
     return Car_Model;
   }
 
-  public void setCar_Model(String car_Model) {
+  public void setCarModel(String car_Model) {
     Car_Model = car_Model;
   }
 

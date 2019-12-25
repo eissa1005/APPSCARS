@@ -30,7 +30,7 @@ public class CarBrand {
 
 	@Override
  	public String toString(){
-		return 
+		return
 		"CarBrand{" +
 			"Car_Brand = '" + Car_Brand + '\'' +
 			",CarID = '" + CarID + '\'' +

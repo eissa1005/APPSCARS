@@ -180,7 +180,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             Log.d(TAG, "loadMainCarEvent:isSuccess");
             displayCarsSlider(event.getMainCarList());
             int size = event.getMainCarList().size();
-            Log.e("Listsize", "Size of CAR Slider : " + size);
+            Log.d("Listsize", "Size of CAR Slider : " + size);
             displayCars(event.getMainCarList());
             int sizeListRestaurant = event.getMainCarList().size();
             Log.e("sizeListCars", "Size of Cars : " + sizeListRestaurant);
@@ -213,6 +213,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         int ItemId = item.getItemId();
         switch (ItemId) {
             case R.id.nav_account:
+                startActivity(new Intent(MainActivity.this, SampleActivityRecycler.class));
                 break;
             case R.id.nav_Advertisement:
                 startActivity(new Intent(MainActivity.this, AddCarActivity.class));

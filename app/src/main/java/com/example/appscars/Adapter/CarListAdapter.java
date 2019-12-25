@@ -40,10 +40,10 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.CarListH
 
     @Override
     public void onBindViewHolder(@NonNull CarListHolder holder, int position) {
-        Picasso.get().load(carList.get(position).getCARPhoto()).into(holder.img_car);
-        holder.txt_car_name.setText(carList.get(position).getCARBrand());
-        holder.txt_carno.setText(new StringBuilder("Ref :").append(carList.get(position).getCARNo()));
-        holder.txt_price_car.setText(new StringBuilder("EG ").append(carList.get(position).getCARPrice()));
+        Picasso.get().load(carList.get(position).getCarPhoto()).into(holder.img_car);
+        holder.txt_car_name.setText(carList.get(position).getCarBrand());
+        holder.txt_carno.setText(new StringBuilder("Ref :").append(carList.get(position).getCarNo()));
+        holder.txt_price_car.setText(new StringBuilder("EG ").append(carList.get(position).getCarPrice()));
         holder.txt_car_size.setText(new StringBuilder("Size : ").append(carList.get(position).getCarSize()));
         holder.txt_car_color.setText(new StringBuilder("Color : ").append(carList.get(position).getColors()));
     }

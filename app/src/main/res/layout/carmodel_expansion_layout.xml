@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.github.florent37.expansionpanel.ExpansionHeader
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:expansion_headerIndicator="@id/headerIndicatorCarModel"
+        app:expansion_layout="@id/expansionLayoutCarModel"
+        app:expansion_toggleOnClick="true">
+
+        <RelativeLayout
+            android:background="@drawable/border_cell"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/car_model"
+                android:textColor="#3E3E3E"
+                android:fontFamily="@font/magnifika"
+                tools:ignore="HardcodedText,RelativeOverlap" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_width="wrap_content"
+                android:text="SELECT Car Model"
+                android:textColor="#AAA"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/headerIndicatorCarModel"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_height="40dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+
+        </RelativeLayout>
+
+    </com.github.florent37.expansionpanel.ExpansionHeader>
+
+    <com.github.florent37.expansionpanel.ExpansionLayout
+        android:id="@+id/expansionLayoutCarModel"
+        app:expansion_expanded="false"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:id="@+id/containerCarModel"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/recycler_car_model"
+                tools:ignore="ResourceCycle" />
+
+        </LinearLayout>
+
+    </com.github.florent37.expansionpanel.ExpansionLayout>
+</LinearLayout>

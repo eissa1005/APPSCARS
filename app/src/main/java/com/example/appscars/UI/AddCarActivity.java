@@ -1,6 +1,5 @@
 package com.example.appscars.UI;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,28 +9,27 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.appscars.API.APIManage;
 import com.example.appscars.Adapter.CarBrandAdapter;
 import com.example.appscars.Adapter.CarTypeAdapter;
 import com.example.appscars.Base.BaseActivity;
 import com.example.appscars.Common.Common;
 import com.example.appscars.Model.EventBus.CarBrandEvent;
+import com.example.appscars.Model.Response.CarBrand;
 import com.example.appscars.Model.Response.CarType;
 import com.example.appscars.R;
+import com.github.florent37.expansionpanel.ExpansionLayout;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -40,7 +38,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
-@SuppressLint("Registered")
+
 public class AddCarActivity extends BaseActivity {
 
     private static final String TAG = AddCarActivity.class.getName();
@@ -68,6 +66,8 @@ public class AddCarActivity extends BaseActivity {
     TextInputEditText check_Date;
     @BindView(R.id.btn_AddCar)
     Button btn_AddCar;
+    @BindView(R.id.expansionLayout)
+    ExpansionLayout expansionLayout;
 
     CompositeDisposable compositeDisposable;
     LayoutAnimationController layoutAnimationController;
@@ -89,7 +89,6 @@ public class AddCarActivity extends BaseActivity {
         init();
         initView();
         loadCarBrand();
-        loadCarType();
 
     }
 
@@ -114,10 +113,11 @@ public class AddCarActivity extends BaseActivity {
     private void init() {
         compositeDisposable = new CompositeDisposable();
         mDialog = new SpotsDialog.Builder().setContext(activity).setCancelable(false).build();
+
     }
 
-
     // Load Data From Server
+   // @OnClick(R.id.headerIndicator)
     public void loadCarBrand() {
         mDialog.show();
         compositeDisposable.add(APIManage.getApi().GetCarBrand(Common.API_KEY)
@@ -126,7 +126,6 @@ public class AddCarActivity extends BaseActivity {
                 .subscribe(carBrandModel -> {
                     if (carBrandModel.isSuccess()) {
                         Log.d(TAG, "carBrandModel:Size " + String.valueOf(carBrandModel.getResult().size()));
-                        Log.d(TAG, "carBrandModel:Name " + String.valueOf(carBrandModel.getResult().get(0).getCarBrand()));
                         EventBus.getDefault().post(new CarBrandEvent(true, carBrandModel.getResult()));
                         mDialog.dismiss();
                     } else {
@@ -135,15 +134,17 @@ public class AddCarActivity extends BaseActivity {
                     }
                 }, throwable -> {
                     Toast.makeText(activity, " Throwable Car Brand" + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.d("CarBrands",throwable.getMessage());
                     mDialog.dismiss();
                 }));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void displayAddon(CarBrandEvent event) {
-        Log.d(TAG, "displayAddon: called!!");
-        Log.d(TAG, "displayAddon: "+event.getBrandList().get(0).toString());
+    public void displayCarBrand(CarBrandEvent event) {
+        Log.d(TAG, "displayCarBrand: called!!");
+        Log.d(TAG, "displayCarBrand: "+event.getBrandList().get(0).toString());
         if (event.isSuccess()) {
+
             recycler_carBrand.setHasFixedSize(true);
             recycler_carBrand.setLayoutManager(new LinearLayoutManager(this));
             recycler_carBrand.setAdapter(new CarBrandAdapter(AddCarActivity.this, event.getBrandList()));
@@ -152,54 +153,5 @@ public class AddCarActivity extends BaseActivity {
 
 
 
-    public void displayCarType(List<CarType> carTypeList) {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
-        recycler_carType.setLayoutManager(linearLayoutManager);
-        recycler_carType.addItemDecoration(new DividerItemDecoration(activity, linearLayoutManager.getOrientation()));
-        CarTypeAdapter adapter = new CarTypeAdapter(activity, carTypeList);
-        recycler_carType.setAdapter(adapter);
-        layoutAnimationController = AnimationUtils.loadLayoutAnimation(activity, R.anim.layout_item_from_left);
-        recycler_carType.setLayoutAnimation(layoutAnimationController);
-
-    }
-
-    public void loadCarType() {
-        mDialog.show();
-        compositeDisposable.add(APIManage.getApi().GetCarType(Common.API_KEY)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(carTypeModel -> {
-                    if (carTypeModel.isSuccess()) {
-                        Log.d(TAG, "carTypeModel:Size" + String.valueOf(carTypeModel.getResult().size()));
-                        displayCarType(carTypeModel.getResult());
-                        mDialog.dismiss();
-                    } else {
-                        Toast.makeText(activity, "Get Car Type" + carTypeModel.getMessage(), Toast.LENGTH_SHORT).show();
-                        mDialog.dismiss();
-                    }
-                }, throwable -> {
-                    Toast.makeText(activity, " Throwable Car Type" + throwable.getMessage(), Toast.LENGTH_SHORT).show();
-                    mDialog.dismiss();
-                }));
-    }
-
-    public void displayCarStatus(String[] listStatus) {
-        Log.d(TAG, "CarType:display");
-        ArrayAdapter adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_1, R.id.listView_carStatus, listStatus);
-        listView_carStatus.setAdapter(adapter);
-    }
-
-    public void displayCategoryType(String[] listCategory) {
-        Log.d(TAG, "CategoryType:display");
-        ArrayAdapter adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_1, R.id.list_category, listCategory);
-        Log.d("getItem", String.valueOf(adapter.getItem(0)));
-        list_category.setAdapter(adapter);
-    }
-
-    @OnClick(R.id.btn_AddCar)
-    public void AddAdvertisement() {
-        Toast.makeText(activity, "Added Advertisement Car is Success", Toast.LENGTH_SHORT).show();
-
-    }
 
 }
