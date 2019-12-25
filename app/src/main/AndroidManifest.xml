@@ -15,8 +15,6 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
 
-        <activity android:name=".UI.SampleActivityRecycler"
-            tools:ignore="InnerclassSeparator"></activity>
         <activity
             android:name=".UI.AddCarActivity"
             android:theme="@style/AppTheme.NoActionBar"
