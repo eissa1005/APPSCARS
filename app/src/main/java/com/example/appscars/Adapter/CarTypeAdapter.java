@@ -21,11 +21,11 @@ import butterknife.Unbinder;
 public class CarTypeAdapter extends RecyclerView.Adapter<CarTypeAdapter.CarTypeHolder> {
 
     Context mContext;
-    List<CarType> carCarTypeList;
+    List<CarType> carTypeList;
 
-    public CarTypeAdapter(Context mContext, List<CarType> carCarTypeList) {
+    public CarTypeAdapter(Context mContext, List<CarType> carTypeList) {
         this.mContext = mContext;
-        this.carCarTypeList = carCarTypeList;
+        this.carTypeList = carTypeList;
     }
 
     @NonNull
@@ -37,17 +37,17 @@ public class CarTypeAdapter extends RecyclerView.Adapter<CarTypeAdapter.CarTypeH
 
     @Override
     public void onBindViewHolder(@NonNull CarTypeHolder holder, int position) {
-        holder.txt_carType.setText(carCarTypeList.get(position).getCarType());
+        holder.txt_carType.setText(carTypeList.get(position).getCarType());
     }
 
     @Override
     public int getItemCount() {
-        if(carCarTypeList == null)return 0;
+        if(carTypeList == null)return 0;
         else
-            return carCarTypeList.size();
+            return carTypeList.size();
     }
     public class CarTypeHolder  extends RecyclerView.ViewHolder {
-        @BindView(R.id.txt_carType)
+        @BindView(R.id.txt_CarType)
         TextView txt_carType;
 
         Unbinder unbinder;

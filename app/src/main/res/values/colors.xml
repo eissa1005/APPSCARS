@@ -5,13 +5,15 @@
     <color name="colorAccent">#17628C</color>
     <color name="button_color">#05091F</color>
     <color name="divider">#F5FFFFFF</color>
+    <color name="expand">#05091F</color>
+    <color name="collaps">#0A6092</color>
     <color name="border_color">#E1ECF7</color>
     <color name="colorPrice">#070A37</color>
     <color name="bt_border_color">#b3b3ff</color>
     <color name="black">#0F0F0F</color>
     <color name="colorWhite">#F3F0EE</color>
     <color name="buttonColor">@color/colorPrimary</color>
-    <color name="overlayBackground">#F0EDED</color>
+    <color name="overlayBackground">#03183C</color>
     <color name="overBackground">#F5F2F2</color>
     <color name="colorPrimaryBlue">#A2D0F3</color>
     <color name="colorCardviewDark">#52424242</color>

@@ -9,9 +9,15 @@
     <com.github.florent37.expansionpanel.ExpansionHeader
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_marginStart="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/border_expand"
         app:expansion_headerIndicator="@id/headerIndicatorCheckStatus"
         app:expansion_layout="@id/expansionLayoutCheckStatus"
-        app:expansion_toggleOnClick="true">
+        app:expansion_toggleOnClick="true"
+        tools:ignore="RtlHardcoded">
 
         <RelativeLayout
 
@@ -25,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="@string/check_status"
-                android:textColor="#3E3E3E"
+                android:textColor="@color/white"
                 android:fontFamily="@font/magnifika"
                 tools:ignore="HardcodedText,RelativeOverlap" />
 

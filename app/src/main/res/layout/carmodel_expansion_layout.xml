@@ -9,12 +9,17 @@
     <com.github.florent37.expansionpanel.ExpansionHeader
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_marginStart="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="2dp"
         app:expansion_headerIndicator="@id/headerIndicatorCarModel"
         app:expansion_layout="@id/expansionLayoutCarModel"
-        app:expansion_toggleOnClick="true">
+        app:expansion_toggleOnClick="true"
+        tools:ignore="RtlHardcoded">
 
         <RelativeLayout
-            android:background="@drawable/border_cell"
+            android:background="@drawable/border_expand"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:paddingLeft="16dp"
@@ -25,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="@string/car_model"
-                android:textColor="#3E3E3E"
+                android:textColor="@color/white"
                 android:fontFamily="@font/magnifika"
                 tools:ignore="HardcodedText,RelativeOverlap" />
 
@@ -66,7 +71,7 @@
             android:layout_width="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/recycler_car_model"
+            <include layout="@layout/list_car_model"
                 tools:ignore="ResourceCycle" />
 
         </LinearLayout>

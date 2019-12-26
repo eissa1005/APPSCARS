@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ListView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list_pay_type"
+    android:id="@+id/list_Car_City"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="100dp"
     android:layout_margin="4dp"
     android:textAlignment="center"
     android:orientation="vertical"
+    android:scrollbars="vertical"
+    android:fastScrollAlwaysVisible="true"
     >
 </ListView>

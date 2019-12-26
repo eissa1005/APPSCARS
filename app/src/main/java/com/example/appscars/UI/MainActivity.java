@@ -213,7 +213,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         int ItemId = item.getItemId();
         switch (ItemId) {
             case R.id.nav_account:
-                startActivity(new Intent(MainActivity.this, SampleActivityRecycler.class));
+                //startActivity(new Intent(MainActivity.this, SampleActivityRecycler.class));
                 break;
             case R.id.nav_Advertisement:
                 startActivity(new Intent(MainActivity.this, AddCarActivity.class));

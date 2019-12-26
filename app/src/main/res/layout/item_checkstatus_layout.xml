@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/txt_CarStatus"
+    android:fontFamily="@font/robotomedium"
+    android:textSize="18sp"
+    tools:text="Valid"
+    android:padding="2dp"
+    android:layout_marginTop="2dp"
+    android:textAlignment="center"
+    android:textStyle="normal"
+    android:textColor="@color/colorPrimaryDark"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="HardcodedText">
+</TextView>
+
+

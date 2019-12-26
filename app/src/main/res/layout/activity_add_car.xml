@@ -49,8 +49,7 @@
             <!-- TableRow Car Model -->
             <include layout="@layout/carmodel_expansion_layout"/>
 
-            <!-- TableRow Check Status -->
-            <include layout="@layout/check_status_expansion_layout"/>
+
             <!-- TableRow Check Photo -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,6 +100,54 @@
 
             </LinearLayout>
 
+            <!-- TableRow  Price -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:ignore="UselessLeaf">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/car_price"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center"
+                        android:textColor="#3E3E3E"
+                        android:fontFamily="@font/magnifika"
+                        tools:ignore="HardcodedText,ObsoleteLayoutParam,RelativeOverlap,RtlHardcoded" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/edit_Price"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_height="wrap_content"
+                            android:hint="enter price"
+                            android:inputType="numberDecimal"
+                            android:clickable="true"
+                            tools:ignore="Autofill,HardcodedText,InefficientWeight,KeyboardInaccessibleWidget,LabelFor,Suspicious0dp,TextFields">
+                        </EditText>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
             <!-- TableRow City -->
             <include layout="@layout/carcity_expansion_layout"/>
 
@@ -141,6 +188,8 @@
                            android:id="@+id/edit_check_date"
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
+                          android:inputType="date"
+                           android:layout_marginStart="10dp"
                            android:hint="enter check Date"
                            android:clickable="true"
                            tools:ignore="Autofill,HardcodedText,KeyboardInaccessibleWidget,LabelFor,TextFields">
@@ -153,6 +202,8 @@
 
             </LinearLayout>
 
+            <!-- TableRow Check Status -->
+            <include layout="@layout/check_status_expansion_layout"/>
 
 
             <!---  button   -->

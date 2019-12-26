@@ -59,7 +59,7 @@
     <string name="cars">CARS</string>
     <string name="check_status">Check Status</string>
     <string name="check_photos">Check Photo</string>
-    <string name="car_price">Price</string>
+    <string name="car_price">Car Price</string>
     <string name="check_date">Check Date</string>
     <string name="car_status_ar">حاله السياره</string>
     <string name="car_lime">نوع الجير</string>
@@ -96,6 +96,27 @@
     <string name="car_brand">Car Brand</string>
     <string name="add_check_photo">Add Check Photo</string>
     <string name="check_photo">Check Photo</string>
+    <string-array name="CarModel" >
+        <item>2020</item>
+        <item>2019</item>
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+        <item>2013</item>
+        <item>2012</item>
+        <item>2011</item>
+        <item>2010</item>
+    </string-array>
+
+    <string-array name="lstCity">
+        <item>Alexandria</item><item>Cairo</item><item>Tanta</item><item>Faiyum</item>
+        <item>Damietta</item><item>Giza</item><item>Ismailia</item><item>Kafr El Sheikh</item>
+        <item>Luxor</item><item>Matruh</item><item>Minya</item><item>Monufia</item>
+        <item>New Valley</item><item>North Sinai</item><item>Port Said</item><item>Qena</item>
+        <item>Suez</item><item>Mansoura</item><item>Kafr El Dawar</item><item>Sheikh Zaid</item>
+    </string-array>
 
 
 </resources>
