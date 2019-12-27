@@ -10,18 +10,11 @@
         android:fontFamily="@font/robotomedium"
         android:textSize="18sp"
         android:text="BMW"
-        android:padding="2dp"
+       android:layout_margin="4dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText" />
-
-    <View
-        android:id="@+id/colorViews"
-        android:background="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height=".5dp"/>
-
 
 </LinearLayout>

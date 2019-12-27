@@ -10,17 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/robotomedium"
-        android:padding="2dp"
+        android:layout_margin="4dp"
         android:text="KIAA"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         tools:ignore="HardcodedText" />
-
-    <View
-        android:id="@+id/colorView"
-        android:background="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height=".5dp"/>
 
 </LinearLayout>

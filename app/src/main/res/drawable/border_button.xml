@@ -7,7 +7,7 @@
          android:bottomLeftRadius="8dp" android:bottomRightRadius="8dp"/>
 
     <gradient
-        android:startColor="@color/overlayBackground"
+        android:startColor="@color/button_color"
         android:endColor="@color/button_color"/>
 
 </shape>

@@ -35,12 +35,14 @@
                 tools:ignore="HardcodedText,RelativeOverlap" />
 
             <TextView
+                android:id="@+id/selectCarType"
                 android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="120dp"
                 android:layout_width="wrap_content"
                 android:text="SELECT Car Type"
                 android:textColor="#AAA"
+                android:textAlignment="center"
                 tools:ignore="HardcodedText,RtlHardcoded" />
 
             <ImageView
@@ -71,7 +73,7 @@
             android:layout_width="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/recycler_cartype"
+            <include layout="@layout/list_cartype"
                 tools:ignore="ResourceCycle" />
 
         </LinearLayout>
