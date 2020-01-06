@@ -10,11 +10,14 @@ import java.util.Date;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import okhttp3.MultipartBody;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface APIService {
@@ -55,5 +58,11 @@ public interface APIService {
     @POST("AddCar")
     Observable<CARModel> AddCars(@Field("key")String key, @FieldMap Map<String, CAR> carMap);
 
+    @Multipart
+    @POST("AddCar")
+  Observable<CARModel> uploadFile (
+                                   @Field("Car_Brand")String Car_Brand,
+                                   @Field("Car_Type") String Car_Type,
+                                   @Part MultipartBody.Part checkPhoto);
 }
 

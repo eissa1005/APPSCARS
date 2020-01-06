@@ -10,12 +10,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import com.example.appscars.API.APIManage;
 import com.example.appscars.Adapter.CarBrandAdapters;
-import com.example.appscars.Adapter.CarTypeAdapter;
 import com.example.appscars.Adapter.CarTypeAdapters;
 import com.example.appscars.Base.BaseActivity;
 import com.example.appscars.Common.Common;
